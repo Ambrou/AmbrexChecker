@@ -1,0 +1,62 @@
+REQUIREMENTS EXTRACTION (RQ-FRT)
+Document-Source: 
+Document-Name: 
+Extracted-By: 
+Date-Time: 
+@=@=@REQUIREMENT@=@=@
+ReqID= ESD-001
+TITRE= 
+VER= 
+Exigence(s)-Amont= ESG-001 (P)
+Cat�gorie= 
+Criticit�= 
+Impact= 
+Stabilit�= 
+V�rif.= Test
+Commentaire(s)= 
+Statut= 
+Date-Statut= 
+@=@=@REQUIREMENT@=@=@
+@=@=@REQUIREMENT@=@=@
+ReqID= ESD-002
+TITRE= 
+VER= 
+Exigence(s)-Amont= ESG-001 (P)
+Cat�gorie= 
+Criticit�= 
+Impact= 
+Stabilit�= 
+V�rif.= Test
+Commentaire(s)= 
+Statut= 
+Date-Statut= 
+@=@=@REQUIREMENT@=@=@
+@=@=@REQUIREMENT@=@=@
+ReqID= ESD-003
+TITRE= 
+VER= 
+Exigence(s)-Amont= ESG-001 (P)
+Cat�gorie= 
+Criticit�= 
+Impact= 
+Stabilit�= 
+V�rif.= 
+TEXTE=   
+Commentaire(s)= 
+Statut=
+Date-Statut= 
+@=@=@REQUIREMENT@=@=@
+ReqID= ESD-004
+TITRE=
+VER= 
+Exigence(s)-Amont= ESG-001 (P) ESG-002 (T)
+Cat�gorie= 
+Criticit�= 
+Impact= 
+Stabilit�= 
+V�rif.= 
+Commentaire(s)=
+Statut= 
+Date-Statut= 
+@=@=@REQUIREMENT@=@=@
+@=@=@REQUIREMENT@=@=@
