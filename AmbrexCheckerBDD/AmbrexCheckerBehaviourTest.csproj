@@ -55,7 +55,13 @@
   <ItemGroup>
     <Compile Include="ChargementDeFichierAmbrexSteps.cs" />
     <Compile Include="CheckerVisitor.cs" />
+    <Compile Include="ConfigurationDeLApplicationSteps.cs" />
     <Compile Include="EtatDeLaCouvertureDExigencesSteps.cs" />
+    <Compile Include="Features\ConfigurationDeLApplication.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConfigurationDeLApplication.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\EcrireRapport.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -77,6 +83,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Features\ConfigurationDeLApplication.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ConfigurationDeLApplication.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\EcrireRapport.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>EcrireRapport.feature.cs</LastGenOutput>
