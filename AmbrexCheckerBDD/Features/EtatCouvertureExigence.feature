@@ -21,8 +21,9 @@
 		| ESD04 | ESG04       |
 		| ESD05 | ESG03       |
 	Quand je compare ces deux listes
-	Alors l'exigence ESG05 n'est pas couverte
-	Et l'exigence ESG06 n'est pas couverte
+	Alors les exigences amonts ne sont pas correctement couvertes
+#	Alors l'exigence ESG05 n'est pas couverte
+#	Et l'exigence ESG06 n'est pas couverte
 
   Scénario: Couverture des exigences Amont par Aval avec une exigence Amont oublié
 	Soit les exigences amonts:
@@ -38,7 +39,8 @@
 		| ESD04 | ESG04 ESG05 |
 		| ESD05 | ESG03       |
 	Quand je compare ces deux listes
-	Alors l'exigence ESD04 couvre une exigence inconnu : ESG05
+	Alors les exigences amonts ne sont pas correctement couvertes
+#	Alors l'exigence ESD04 couvre une exigence inconnu : ESG05
 
   Scénario: Traçabailité correct entre les exigences amonts et les exigences avales
 	Etant donné les exigences amonts:

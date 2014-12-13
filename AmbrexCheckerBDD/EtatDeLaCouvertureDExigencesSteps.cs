@@ -63,5 +63,12 @@ namespace AmbrexCheckerBDD
             Assert.AreEqual(0, ambrexChecker.getRequirementCoveredButNotExist().Count);
             Assert.AreEqual(0, ambrexChecker.getRequirementNotCovered().Count);
         }
+
+        [Then(@"les exigences amonts ne sont pas correctement couvertes")]
+        public void AlorsLesExigencesAmontsNeSontPasCorrectementCouvertes()
+        {
+            Assert.AreNotEqual(0, ambrexChecker.getRequirementCoveredButNotExist().Count + ambrexChecker.getRequirementNotCovered().Count);
+        }
+
     }
 }
