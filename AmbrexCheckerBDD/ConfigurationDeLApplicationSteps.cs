@@ -64,6 +64,9 @@ namespace AmbrexCheckerBDD
         public void AlorsLApplicationArreteSonTraitement()
         {
             ScenarioContext.Current.Pending();
+
+
+
         }
     }
 }
