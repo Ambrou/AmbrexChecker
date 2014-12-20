@@ -3,12 +3,47 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace AmbrexChecker
 {
     public class Checker
     {
+        public void analyzeCommandLine(string[] args)
+        {
+            //Regex regexAmont = new Regex(@"^LDAP://CN=([\w]+), CN=([\w]+), DC=([\w]+), DC=([\w]+)$");
+            Regex regexAmont = new Regex(@"^-amont=(.+)$");
+            Regex regexAval = new Regex(@"^-aval=(.+)$");
+
+            //string amont = regexAmont.Match("LDAP://CN=moderateurs, CN=pharaonix, DC=com, DC=developpez")
+
+
+            string[] amont = Array.FindAll(args, delegate(string v) { return v.StartsWith("-amont="); });
+            string[] aval = Array.FindAll(args, delegate(string v) { return v.StartsWith("-aval="); });
+
+            foreach (string s in amont)
+            {
+                Match m = regexAmont.Match(s);
+                this.amontFile = m.Groups[1].Value.Replace("\"", "");
+            }
+
+            foreach (string s in aval)
+            {
+                Match m = regexAval.Match(s);
+                this.avalFile = m.Groups[1].Value.Replace("\"", "");
+            }
+
+            if(this.amontFile == null)
+            {
+                throw new AmbrexCheckerExceptionFileMissing("amont");
+            }
+            if (this.avalFile == null)
+            {
+                throw new AmbrexCheckerExceptionFileMissing("aval");
+            }
+        }
+
         public void setAmont(List<string> listAmont)
         {
             amontRequirements = listAmont;
@@ -33,11 +68,6 @@ namespace AmbrexChecker
         public List<Tuple<string, string>> getRequirementCoveredButNotExist()
         {
             return avalRequirementsCovevedRequirementNotExist;
-        }
-
-        public void setAmontFile(String amontFile)
-        {
-            this.amontFile = amontFile;
         }
 
         public void setAvalFile(String avalFile)
@@ -228,9 +258,9 @@ namespace AmbrexChecker
         protected Dictionary<string, List<string>> avalRequirements = new Dictionary<string, List<string>>();
         protected List<Tuple<string, string>> avalRequirementsCovevedRequirementNotExist = new List<Tuple<string, string>>();
         protected List<string> amontRequirementsNotCovered = new List<string>();
-        
-        private string amontFile;
-        private string avalFile;
+
+        protected string amontFile = null;
+        protected string avalFile = null;
         private string rapportFile;
     }
 }

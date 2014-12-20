@@ -28,5 +28,21 @@ namespace AmbrexCheckerBDD
         {
             return amontRequirementsNotCovered;
         }
+
+        public string getAmontFile()
+        {
+            return amontFile;
+        }
+
+        public string getAvalFile()
+        {
+            return avalFile;
+        }
+
+        public void setAmontFile(string s)
+        {
+            amontFile = s;
+        }
+
     }
 }

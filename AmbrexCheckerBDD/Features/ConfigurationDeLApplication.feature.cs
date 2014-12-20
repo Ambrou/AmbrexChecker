@@ -78,17 +78,17 @@ namespace AmbrexCheckerBDD.Features
 #line 6
 this.ScenarioSetup(scenarioInfo);
 #line 7
-  testRunner.Given("l\'application lancé avec une ligne de commande", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
+  testRunner.Given("une ligne de commande avec 2 arguments", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
 #line 8
-    testRunner.And("la ligne de commande contient \'-amont=\"fichier amont.txt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+    testRunner.And("la ligne de commande contient \'-amont=\"fichier amont.txt\"\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line 9
-    testRunner.And("la ligne de commande contient \'-aval=\"fichier aval.doc\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+    testRunner.And("la ligne de commande contient \'-aval=\"fichier aval.doc\"\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line 10
   testRunner.When("j\'analyse la ligne de commande", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quand ");
 #line 11
-  testRunner.Then("le fichier contenant les exigences amonts est fichier amont.txt", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
+  testRunner.Then("le fichier contenant les exigences amonts est fichier \'fichier amont.txt\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
 #line 12
-    testRunner.And("le fichier contenant les exigences avals est fichier aval.doc", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+    testRunner.And("le fichier contenant les exigences avals est fichier \'fichier aval.doc\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -102,15 +102,15 @@ this.ScenarioSetup(scenarioInfo);
 #line 14
 this.ScenarioSetup(scenarioInfo);
 #line 15
-  testRunner.Given("l\'application lancé avec une ligne de commande", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
+  testRunner.Given("une ligne de commande avec 2 arguments", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
 #line 16
-    testRunner.And("la ligne de commande contient \'-aval=\"fichier aval.doc\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+    testRunner.And("la ligne de commande contient \'-aval=\"fichier aval.doc\"\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line 17
     testRunner.And("la ligne de commande ne contient pas de commutateur -amont", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line 18
   testRunner.When("j\'analyse la ligne de commande", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quand ");
 #line 19
-  testRunner.Then("un message d\'erreur apparait \"le fichier amont n\'est pas renseigné\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
+  testRunner.Then("un message d erreur apparait \"le fichier amont n\'est pas renseigné\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
 #line 20
     testRunner.And("l\'application arrête son traitement", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line hidden
@@ -126,15 +126,15 @@ this.ScenarioSetup(scenarioInfo);
 #line 22
 this.ScenarioSetup(scenarioInfo);
 #line 23
-  testRunner.Given("l\'application lancé avec une ligne de commande", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
+  testRunner.Given("une ligne de commande avec 2 arguments", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Soit ");
 #line 24
-    testRunner.And("la ligne de commande contient \'-amont=\"fichier amont.doc\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
+    testRunner.And("la ligne de commande contient \'-amont=\"fichier amont.doc\"\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line 25
     testRunner.And("la ligne de commande ne contient pas de commutateur -aval", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line 26
   testRunner.When("j\'analyse la ligne de commande", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quand ");
 #line 27
-  testRunner.Then("un message d\'erreur apparait \"le fichier aval n\'est pas renseigné\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
+  testRunner.Then("un message d erreur apparait \"le fichier aval n\'est pas renseigné\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Alors ");
 #line 28
     testRunner.And("l\'application arrête son traitement", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Et ");
 #line hidden

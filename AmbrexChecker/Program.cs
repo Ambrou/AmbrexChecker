@@ -13,13 +13,13 @@ namespace AmbrexChecker
             Checker checker = new Checker();
 
 
-            checker.setAmontFile(args[0]);
-            checker.setAvalFile(args[1]);
-            checker.setReportFile(args[2]);
-            checker.loadAvalRequirement();
-            checker.loadAmontRequirement();
-            checker.checkCoverage();
-            checker.generateRapport();
+            //checker.setAmontFile(args[0]);
+            //checker.setAvalFile(args[1]);
+            //checker.setReportFile(args[2]);
+            //checker.loadAvalRequirement();
+            //checker.loadAmontRequirement();
+            //checker.checkCoverage();
+            //checker.generateRapport();
         }
     }
 }

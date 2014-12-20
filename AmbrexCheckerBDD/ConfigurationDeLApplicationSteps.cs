@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AmbrexChecker;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using TechTalk.SpecFlow;
 
 namespace AmbrexCheckerBDD
@@ -6,67 +8,74 @@ namespace AmbrexCheckerBDD
     [Binding]
     public class ConfigurationDeLApplicationSteps
     {
-        [Given(@"l'application lancé avec une ligne de commande")]
-        public void SoitLApplicationLanceAvecUneLigneDeCommande()
+        CheckerVisitor ambrexChecker = new CheckerVisitor();
+        string[] args;
+        int iIndex = 0;
+        AmbrexCheckerExceptionFileMissing ambrexCheckerExceptionFileMissing = null;
+        
+
+        [Given(@"une ligne de commande avec (.*) arguments")]
+        public void SoitUneLigneDeCommandeAvecArguments(int p0)
         {
-            ScenarioContext.Current.Pending();
+           args = new string[p0];
         }
 
-        [Given(@"la ligne de commande contient '-amont=""(.*)""")]
-        public void SoitLaLigneDeCommandeContient_Amont(string p0)
-        {
-            ScenarioContext.Current.Pending();
-        }
 
-        [Given(@"la ligne de commande contient '-aval=""(.*)""")]
-        public void SoitLaLigneDeCommandeContient_Aval(string p0)
+        [Given(@"la ligne de commande contient '(.*)'")]
+        public void SoitLaLigneDeCommandeContient(string p0)
         {
-            ScenarioContext.Current.Pending();
+            args[iIndex++] = p0;
         }
 
         [Given(@"la ligne de commande ne contient pas de commutateur -amont")]
         public void SoitLaLigneDeCommandeNeContientPasDeCommutateur_Amont()
         {
-            ScenarioContext.Current.Pending();
+            args[iIndex++] = "toto";
         }
 
         [Given(@"la ligne de commande ne contient pas de commutateur -aval")]
         public void SoitLaLigneDeCommandeNeContientPasDeCommutateur_Aval()
         {
-            ScenarioContext.Current.Pending();
+            args[iIndex++] = "titi";
         }
 
         [When(@"j'analyse la ligne de commande")]
         public void QuandJAnalyseLaLigneDeCommande()
         {
-            ScenarioContext.Current.Pending();
+            try
+            {
+                ambrexChecker.analyzeCommandLine(args);
+            }
+            catch (AmbrexCheckerExceptionFileMissing e)
+            {
+                ambrexCheckerExceptionFileMissing = e;
+            }
+            
         }
 
-        [Then(@"le fichier contenant les exigences amonts est fichier amont\.txt")]
-        public void AlorsLeFichierContenantLesExigencesAmontsEstFichierAmont_Txt()
+        [Then(@"le fichier contenant les exigences amonts est fichier '(.*)'")]
+        public void AlorsLeFichierContenantLesExigencesAmontsEstFichier(string p0)
         {
-            ScenarioContext.Current.Pending();
+            Assert.AreEqual(p0, ambrexChecker.getAmontFile());
         }
 
-        [Then(@"le fichier contenant les exigences avals est fichier aval\.doc")]
-        public void AlorsLeFichierContenantLesExigencesAvalsEstFichierAval_Doc()
+        [Then(@"le fichier contenant les exigences avals est fichier '(.*)'")]
+        public void AlorsLeFichierContenantLesExigencesAvalsEstFichier(string p0)
         {
-            ScenarioContext.Current.Pending();
+            Assert.AreEqual(p0, ambrexChecker.getAvalFile());
         }
 
-        [Then(@"un message d'(.*)'est pas renseigné""")]
-        public void AlorsUnMessageDEstPasRenseigne(string p0)
+
+        [Then(@"un message d erreur apparait ""(.*)""")]
+        public void AlorsUnMessageDErreurApparait(string p0)
         {
-            ScenarioContext.Current.Pending();
+            Assert.AreEqual(p0, ambrexCheckerExceptionFileMissing.Message);
         }
 
         [Then(@"l'application arrête son traitement")]
         public void AlorsLApplicationArreteSonTraitement()
         {
-            ScenarioContext.Current.Pending();
-
-
-
+            Assert.AreNotEqual(null, ambrexCheckerExceptionFileMissing.Message);
         }
     }
 }
