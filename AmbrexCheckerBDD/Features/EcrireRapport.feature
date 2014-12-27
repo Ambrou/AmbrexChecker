@@ -1,7 +1,7 @@
 ﻿Fonctionnalité: Génération du rapport de vérification
-	En tant qu’utilisateur d’AGEX
-	Afin de vérifier la traçabilité entre mes exigences
-	Je veux un rapport donnat l'état de la vérification
+	En tant qu' utilisateur du plugin Ambrex
+    Je veux un rapport de vérification
+    Afin de visualiser rapidement les erreurs de cohérence
 
 
 

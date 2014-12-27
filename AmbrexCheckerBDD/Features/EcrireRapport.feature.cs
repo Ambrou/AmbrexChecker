@@ -31,8 +31,8 @@ namespace AmbrexCheckerBDD.Features
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("fr-FR"), "Génération du rapport de vérification", "En tant qu’utilisateur d’AGEX\r\nAfin de vérifier la traçabilité entre mes exigence" +
-                    "s\r\nJe veux un rapport donnat l\'état de la vérification", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("fr-FR"), "Génération du rapport de vérification", "En tant qu\' utilisateur du plugin Ambrex\r\n Je veux un rapport de vérification\r\n A" +
+                    "fin de visualiser rapidement les erreurs de cohérence", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
